@@ -1,0 +1,8 @@
+<rewriter xmlns="http://marklogic.com/xdmp/rewriter">     
+<match-path matches="^/.well-known/acme-challenge/([0-9A-Za-z]+)">                                                                         
+       <add-query-param name="uri">$1</add-query-param>
+        <match-method any-of="GET">
+        <dispatch>/certbot.sjs</dispatch>
+        </match-method>
+ </match-path>
+</rewriter>
